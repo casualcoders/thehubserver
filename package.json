@@ -1,0 +1,28 @@
+{
+  "name": "thehubserver",
+  "version": "0.0.1",
+  "description": "The backend for The Hub",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casualcoders/thehubserver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/casualcoders/thehubserver/issues"
+  },
+  "homepage": "https://github.com/casualcoders/thehubserver#readme"
+}
