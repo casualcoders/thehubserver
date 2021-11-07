@@ -23,17 +23,17 @@ const typeDefs = gql`
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
-    creators: [Creator]
+    creators(name: String!): [Creator]
   }
 `;
 
 const creators = [
   {
     id: "123456789",
-    name: "Ben Watson",
+    name: "Ben",
     description: "Some random youtuber",
     platform: "Youtube",
-    url: "www.youtube.co.uk/watson",
+    url: "https://www.youtube.co.uk/watson",
     thumbnail: "https://via.placeholder.com/150",
   },
   {
@@ -41,7 +41,7 @@ const creators = [
     name: "Camilo Ruiz",
     description: "Something",
     platform: "Twitter",
-    url: "www.twitter.com/camiloruiz",
+    url: "https://www.twitter.com/camiloruiz",
     thumbnail: "https://via.placeholder.com/150",
   },
 ];
@@ -50,7 +50,10 @@ const creators = [
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
-    creators: () => creators,
+    creators(parent, args, context, info) {
+      const { name } = args;
+      return creators.filter((a) => a.name == name);
+    },
   },
 };
 
