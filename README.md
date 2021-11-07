@@ -1,1 +1,1 @@
-This is the repo for the banckend for The Hub project
+This is the repo for the backend for The Hub project
